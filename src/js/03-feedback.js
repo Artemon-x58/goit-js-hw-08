@@ -32,13 +32,17 @@ loadLocalStorage();
 
 formEl.addEventListener('submit', (e) => {
     e.preventDefault();
+    if(inputEl.value === "" || textEl.value === ""){
+        alert('All fields must be filled')
+    }
+    else {
     const objValues = {
         email: inputEl.value,
         message: textEl.value
     }
     localStorage.removeItem("feedback-form-state")
     console.log("Feedback form state :", objValues)
-    formEl.reset()
+    formEl.reset()}
     
 })
 
